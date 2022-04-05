@@ -46,6 +46,10 @@ if ($jumlah == 0 or $jumlah == ocicolumnisnull){
 }else{
  ?>
 
+<div class="alert alert-primary" role="alert">
+	<p class="text-center">Data Tidak Bisa Di Akses</p>
+</div>
+
 	<?php
 
 for($i = 0; $i < $jumlah; $i++){
