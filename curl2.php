@@ -39,16 +39,17 @@ if ($jumlah == 0 or $jumlah == ocicolumnisnull){
 	?>
 
 
-	<p>Tidak Bisa Di Akses</p>
+<div class="col-md-12">
+<div class="alert alert-primary" role="alert">
+	<p class="text-center">Data Tidak Bisa Di Akses</p>
+</div>
+</div>	
 
 
 <?php
 }else{
  ?>
 
-<div class="alert alert-primary" role="alert">
-	<p class="text-center">Data Tidak Bisa Di Akses</p>
-</div>
 
 	<?php
 
