@@ -38,12 +38,7 @@ if ($jumlah == 0 or $jumlah == ocicolumnisnull){
 
 	?>
 
-
-<div class="col-md-12">
-<div class="alert alert-primary" role="alert">
-	<p class="text-center">Data Tidak Bisa Di Akses</p>
-</div>
-</div>	
+<p>Tidak Bisa Di Akses</p>
 
 
 <?php
