@@ -39,13 +39,14 @@ for($i = 0; $i < $jumlah; $i++){
 $hasil = $data['list_data'][$i];
 
 
+
 ?>
 <tr>
   <td><?=$nomor++?></td>
   <td><?=$hasil['key']?></td>
-  <td><?=$hasil['jumlah_kasus']?></td>
-  <td><?=$hasil['jumlah_sembuh']?></td>
-  <td><?=$hasil['jumlah_meninggal']?></td>
+  <td><?=number_format($hasil['jumlah_kasus']);?></td>
+  <td><?=number_format($hasil['jumlah_sembuh']);?></td>
+  <td><?=number_format($hasil['jumlah_meninggal']);?></td>
 </tr>
 
 <?php
