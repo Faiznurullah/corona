@@ -23,30 +23,29 @@ function http_request($url){
 	return $output;
 }
 
-   $data = http_request("https://api.kawalcorona.com/indonesia/provinsi/");
-
-    $data = json_decode($data, TRUE);
-
+    $data2 = http_request("https://data.covid19.go.id/public/api/prov.json");
+    $data = json_decode($data2, TRUE);
 
 
-$jumlah = count($data);
+
+$jumlah = count($data['list_data']);
+
 
 
 $nomor = 1;
-
 if($jumlah >  0){
 
 for($i = 0; $i < $jumlah; $i++){
+$hasil = $data['list_data'][$i];
 
-	$hasil = $data[$i]['attributes'];
 
 ?>
 <tr>
   <td><?=$nomor++?></td>
-  <td><?=$hasil['Provinsi']?></td>
-  <td><?=$hasil['Kasus_Posi']?></td>
-  <td><?=$hasil['Kasus_Semb']?></td>
-  <td><?=$hasil['Kasus_Meni']?></td>
+  <td><?=$hasil['key']?></td>
+  <td><?=$hasil['jumlah_kasus']?></td>
+  <td><?=$hasil['jumlah_sembuh']?></td>
+  <td><?=$hasil['jumlah_meninggal']?></td>
 </tr>
 
 <?php
