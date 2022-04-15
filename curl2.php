@@ -23,42 +23,42 @@ function http_request($url){
 	return $output;
 }
 
-   $data = http_request("https://api.kawalcorona.com/");
+   $data = http_request("https://coronavirus-19-api.herokuapp.com/countries");
 
     $data = json_decode($data, TRUE);
 
 
 
-$jumlah = count($data);
+$jumlah = count($data) - 1;
 
 $nomor = 1;
 
 
-if ($jumlah == 0 or $jumlah == ocicolumnisnull){
+if ($jumlah == 0 or $jumlah == null){
 
 	?>
 
-<p>Tidak Bisa Di Akses</p>
+
+	<p>Tidak Bisa Di Akses</p>
 
 
 <?php
 }else{
  ?>
 
-
 	<?php
 
 for($i = 0; $i < $jumlah; $i++){
 
-	$hasil = $data[$i]['attributes'];
+	$hasil = $data[$i+1];
 
 ?>
 <tr>
   <td><?=$nomor++?></td>
-  <td><?=$hasil['Country_Region']?></td>
-  <td><?=$hasil['Confirmed']?></td>
-  <td><?=$hasil['Recovered']?></td>
-  <td><?=$hasil['Deaths']?></td>
+  <td><?=$hasil['country']?></td>
+  <td><?=number_format($hasil['cases']);?></td>
+  <td><?=number_format($hasil['recovered']);?></td>
+  <td><?=number_format($hasil['deaths']);?></td>
 </tr>
 
 <?php
